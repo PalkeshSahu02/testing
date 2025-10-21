@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:camera/camera.dart';
 import 'package:google_ml_kit/google_ml_kit.dart';
 import 'package:flutter/foundation.dart';
@@ -50,7 +51,7 @@ class FaceDetectorService {
 
       final inputImage = InputImage.fromBytes(
         bytes: bytes,
-        inputImageData: inputImageData,
+        metadata: inputImageData,
       );
 
       final faces = await _faceDetector.processImage(inputImage);
